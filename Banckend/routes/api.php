@@ -2,8 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\EmployeeApiController;
-use App\Http\Controllers\Api\ProductApiController;
+use App\Http\Controllers\EmployeeApiController;
+use App\Http\Controllers\ProductApiController;
+use App\Http\Controllers\Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +34,4 @@ Route::get('/products', [ProductApiController::class, 'index']);
 Route::post('/products/store', [ProductApiController::class, 'store']);
 Route::post('/products/update', [ProductApiController::class, 'update']);
 Route::post('/products/delete', [ProductApiController::class, 'delete']);
+

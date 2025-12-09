@@ -9,4 +9,10 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
+    
+    public function show()
+    {
+        return  'This is the new method in ProductApiController';
+    }
+
 }
