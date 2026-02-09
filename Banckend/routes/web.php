@@ -22,6 +22,8 @@ Route::get('/', function () {
 Route::get('/employees', [EmployeeController::class, 'index'])->name('employees.index');
 Route::post('/employees', [EmployeeController::class, 'store'])->name('employees.store'); 
 Route::post('/employees/action', [EmployeeController::class, 'action'])->name('employees.action'); 
+Route::get('/employees/{id}', [EmployeeController::class, 'showNew'])->name('employees.show');
+
 
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 Route::post('/products', [ProductController::class, 'store'])->name('products.store');

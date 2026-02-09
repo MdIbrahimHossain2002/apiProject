@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Employee;
 use Illuminate\Http\Request;
+use Milon\Barcode\DNS1D;
+use Milon\Barcode\DNS2D;
 
 class EmployeeController extends Controller
 {
@@ -40,5 +42,13 @@ class EmployeeController extends Controller
             Employee::find($request->id)->delete();
             return response()->json(['success' => true, 'message' => 'Employee deleted']);
         }
+    }
+
+    public function showNew($id)
+    {
+        $employee = Employee::findOrFail($id);
+        $barcode = new DNS1D();
+        $barcode2 = new DNS2D();
+        return view('employees.show', compact('employee', 'barcode', 'barcode2'));
     }
 }

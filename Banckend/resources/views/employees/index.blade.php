@@ -41,6 +41,7 @@
                     <td>{{ $emp->salary }}</td>
                     <td>{{ $emp->status == 1 ? 'Active' : 'Inactive' }}</td>
                     <td>
+                        <a href="{{ route('employees.show', $emp->id) }}" class="btn btn-sm btn-info">View</a>
                         <button class="btn btn-sm btn-warning editBtn" data-id="{{ $emp->id }}">Edit</button>
                         <button class="btn btn-sm btn-danger deleteBtn" data-id="{{ $emp->id }}">Delete</button>
                     </td>
